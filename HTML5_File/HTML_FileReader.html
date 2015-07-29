@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HTML5_File</title>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        
+    </head>
+    <script>
+    window.onload=function(){
+    var listgroup=document.querySelector('.list-group');
+    var fileselect=document.getElementById('selectfile');
+    var badge=document.querySelector('.badge');
+    listgroup.addEventListener('dragover',ondragover,false);
+    listgroup.addEventListener('drop',displayFileInfo,false);
+    function ondragover(e){
+        e.preventDefault();
+        e.stopPropagation();}
+    var button=document.querySelector('.btn');
+        button.onclick=function(e){
+           e.preventDefault();;
+           e.stopPropagation();
+           fileselect.click();
+        }
+    fileselect.addEventListener('change',displayFileInfo,false);
+        
+    function displayFileInfo(event){
+        
+        event.preventDefault();
+        event.stopPropagation();
+        
+        var file=event.target.files|| event.dataTransfer.files;
+        badge.innerHTML=file.length;
+        var reader=new FileReader();
+        var progressbarDiv=document.querySelector('#progressbarDiv');
+        var progress=document.createElement('div');
+        progress.classList.add('progress','progress-stripped','active');
+        var progressBar=document.createElement('div');
+        progressBar.classList.add('progress-bar');
+        progress.appendChild(progressBar);
+        
+        for(var i=0;i<file.length;i++){
+        
+           reader.readAsBinaryString(file[i]);
+           reader.onloadstart=function(e){
+           progressbarDiv.appendChild(progress);
+           }
+           reader.onprogress=function(e){
+               
+               var percentage=Math.round(e.loaded/e.total*100)+'%';
+               progressBar.setAttribute('style','width:'+percentage);
+           }
+           reader.onload=function(e){
+           var li=document.createElement('li');
+           li.classList.add('list-groutp-item');
+           li.innerHTML=e.target.result;
+           listgroup.appendChild(li);}
+           
+        }
+       } 
+    }
+    </script>
+    <style>
+        .list-group{
+        min-height: 100px;
+        border:2px dashed gray;
+        }
+        #selectfile{display: none;}
+    </style>
+    <body>
+    <header id="header" class="page-header">
+        <div class="container">
+            <h1>File List</h1>
+            <h5>filelist</h5>
+        </div>
+    </header>
+    <div class="container">
+    <div class="row">
+    <ul class="list-group clearfix"></ul>
+    <div id="progressbarDiv"></div>
+       
+    </div>
+    <form>
+        <input id="selectfile" name="fileselect" type="file" multiple>
+        <button type="button" class="btn btn-primary">SelectFile</button>
+        <span class="badge pull-right"></span>
+    </form>
+    </div>
+    </div>
+   
+    </body>
+   
+</html>

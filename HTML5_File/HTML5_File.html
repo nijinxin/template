@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HTML5_File</title>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        
+    </head>
+    <script>
+    window.onload=function(){
+    var listgroup=document.querySelector('.list-group');
+    var fileselect=document.getElementById('selectfile');
+    var badge=document.querySelector('.badge');
+    listgroup.addEventListener('dragover',ondragover,false);
+    listgroup.addEventListener('drop',displayFileInfo,false);
+    function ondragover(e){
+        e.preventDefault();
+        e.stopPropagation();}
+    var button=document.querySelector('.btn');
+        button.onclick=function(e){
+           e.preventDefault();;
+           e.stopPropagation();
+           fileselect.click();
+        }
+    fileselect.addEventListener('change',displayFileInfo,false);
+        
+    function displayFileInfo(event){
+        
+        event.preventDefault();
+        event.stopPropagation();
+        
+        var file=event.target.files|| event.dataTransfer.files;
+         badge.innerHTML=file.length;
+        
+        
+        
+        for(var i=0;i<file.length;i++){
+        var li=document.createElement('li');
+        var img=document.createElement('img');
+        var thumbnailContainer=document.createElement('div');
+        var url=window.URL.createObjectURL(file[i]);
+        img.src=url;
+        img.onload=function(event)
+        { window.URL.revokeObjectURL(this.src);}
+        
+        img.classList.add('thumbnail');  
+        thumbnailContainer.classList.add('col-md-3');
+        thumbnailContainer.appendChild(img);
+        listgroup.appendChild(thumbnailContainer);    
+        /*var li=document.createElement('li');
+            li.classList.add('list-group-item');
+            var content=file[i].name+' '+file[i].type+' '+Math.round(file[i].size)+' '+file[i].lastModifiedDate.toLocaleDateString();;
+            li.innerHTML=content; 
+            listgroup.appendChild(li);*/
+        }
+       } 
+    }
+    </script>
+    <style>
+        .list-group{
+        min-height: 100px;
+        border:2px dashed gray;
+        }
+        #selectfile{display: none;}
+    </style>
+    <body>
+    <header id="header" class="page-header">
+        <div class="container">
+            <h1>File List</h1>
+            <h5>filelist</h5>
+        </div>
+    </header>
+    <div class="container">
+    <div class="row">
+    <ul class="list-group clearfix"></ul>
+    <form>
+        <input id="selectfile" name="fileselect" type="file" multiple>
+        <button type="button" class="btn btn-primary">SelectFile</button>
+        <span class="badge pull-right"></span>
+    </form>
+    </div>
+    </div>
+   
+    </body>
+   
+</html>

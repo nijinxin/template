@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script>
+    window.onload=function(){
+    var p1=document.getElementsByTagName('p')[0];
+    var p2=p1.nextElementSibling;
+    var arr=new Array();
+    arr=[30,1,2,9,5]
+    arr.sort();
+    p1.innerHTML=arr;
+    function Sort(a,b){return a-b;}
+    arr.sort(Sort);
+    p2.innerHTML=arr;
+    }
+    
+    
+    </script>
+</head>
+<body>
+<p></p>
+<p></p>
+</body>
+</html>

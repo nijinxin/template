@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<style>
+    div{ width: 50px;
+         height: 50px;
+         border: 2px solid black}
+div[name]{background-color:aqua}/*this selects div that has a attribute of name*/
+div[name="div"]{background-color:red} /*this selects div that has a attribute of name equals div1*/
+div[name^="div1"]{background-color:pink} /*this selects div that has a attribute of name that begins with div1*/
+div[name$="div1"]{background-color:antiquewhite} /*this selects div that has a attribute of name that ends with div1*/
+/*div[name*="div1"]{background-color:greenyellow} /*this selects div that has a attribute of name that contains with div1*/
+div[name~="div1"]{background-color:snow} /*this must contains a space and div1 which is stupid*/
+div[name|="div1"]{background-color:yellow} /*this must contains a - and div1 which is stupid*/
+</style>
+<body>
+<div name></div>
+<div name="div"></div>
+<div name="Adiv1"></div>
+<div name="div1A"></div>
+<div name="div1 1"></div>
+<div name="div1-1"></div>
+</body>
+</html>

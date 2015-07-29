@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<style>
+.bigdiv div{
+width: 50px;
+height: 50px;
+border: 1px solid black;
+margin:20px;
+}
+.bigdiv
+{
+    
+   display: -webkit-box;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:reverse;
+   border:1px solid black;
+   height: 300px;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+   width:500px;
+}
+.bigdiv div:nth-of-type(1){
+
+background-color: aqua;
+-webkit-box-ordinal-group:4;
+}
+.bigdiv div:nth-of-type(2){
+background-color: pink;
+    -webkit-box-ordinal-group:3;
+   
+}
+.bigdiv div:nth-of-type(3){
+background-color: lawngreen;
+    -webkit-box-ordinal-group:2;
+}
+.bigdiv div:nth-of-type(4){
+background-color: mediumpurple;
+    -webkit-box-ordinal-group:1;
+}
+</style>
+<body>
+<div class="bigdiv">
+<div class="div1">1</div>
+<div class="div2">2</div>
+<div class="div3">3</div>
+<div class="div4">4</div>
+</div>
+</body>
+</html>

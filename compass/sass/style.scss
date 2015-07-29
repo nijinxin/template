@@ -1,0 +1,33 @@
+@import "compass";
+
+
+//wrap
+
+.wrap{
+    div{ width: 200px;height: 200px;margin:10px auto; border:1px solid black}
+
+    //compass mixin
+    .div1{
+    border: 0px;
+    @include border-radius(10px);
+    @include box-shadow(0px 0px 2px 2px rgba(0,255,255,1),inset 0 0 2px 2px lighten(rgba(0,255,255,1),30%));
+    }
+    
+    //compass transition
+    .div2{
+        
+        @include transition-timing-function(ease);
+        @include transition-property(all);
+        @include transition-duration(3s);
+        @include border-radius(50%);
+        &:hover{
+            width:300px;
+            height: 300px;
+            @include background-image(radial-gradient(center,circle,rgba(0,255,255,1),rgba(0,255,255,0)));
+        }
+        
+    }
+
+
+
+}

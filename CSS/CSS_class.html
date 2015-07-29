@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+<style>
+    p.blue{ /* //here is the most important thing p.blue means select p with class blue while p. blue selects the element that has class blue which is inside p see the difference below*/
+        color: aqua;
+    }
+    p .blue{
+        color: blue;
+    }
+    p.green{
+        color:chartreuse;
+    }
+    
+    .a.b{
+        background-color:pink; /*.a.b means select the elements that are class a and b in the same time whilce .a .b selects elements that has class b inside elements that has class a and .a>.b selects elements that is class b directly the child of element that is class a*/
+        width:50px;
+        height: 50px;
+    }
+    .a>.b{
+        background-color:purple;
+        width:50px;
+        height: 50px;
+    }
+    .a .b{
+        background-color:red;
+        width:50px;
+        height: 50px;
+    }
+
+    .one{
+        background-color:yellow;
+        width:50px;
+        height: 50px;
+    }
+    .two{
+        background-color:gray; /* class overide depends on the order in css*/
+        width:50px;
+        height: 50px;
+    }
+</style>
+
+
+</head>
+
+
+
+<body>
+<h1>The Basic Template</h1>
+<p class="blue">This is the paragraph that has the class of blue<span class="blue">this is the span inside a paragraph that has the class of blue</span></p>
+<h2>The Classes</h2>
+<p class="green">Bass fish live in lakes.</p>
+
+<div class="a"><div><div class="b"></div></div></div>
+<div class="a b"></div>
+<div class="a"><div class="b"></div></div>
+<div class="one two"></div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+//placeholder
+
+.wraper %gendiv{
+    width:200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+div{
+@extend %gendiv;
+}
+//medie query
+@mixin phone{
+    @media only screen and (max-width:480px){
+    @content;
+    }
+}
+//mixin
+
+@mixin setbackground($color:aqua){
+    background-color:$color;
+}
+
+.backgroundBlue{
+    background-color:blue;
+}
+
+$red: hsla(0,50%,0%,1);
+$rainbow: red,orange,yellow,green,cyan,blue,purple;
+
+@keyframes changehue{
+    0% {background-color:adjust-hue($red,0);}
+    25% {background-color:adjust-hue($red,90);}
+    50% {background-color:adjust-hue($red,180);}
+    75% {background-color:adjust-hue($red,270);}
+    100% {background-color:adjust-hue($red,360);}
+}
+
+@keyframes changeSat{
+    0% {background-color:saturate($red,0%);}
+    25% {background-color:saturate($red,25%);}
+    50% {background-color:saturate($red,50%);}
+    75% {background-color:saturate($red,75%);}
+    100% {background-color:saturate($red,100%);}
+}
+
+@keyframes changeLight{
+    0% {background-color:lighten($red,0%);}
+    25% {background-color:lighten($red,25%);}
+    50% {background-color:lighten($red,50%);}
+    75% {background-color:lighten($red,75%);}
+    100% {background-color:lighten($red,100%);}
+}
+.wraper{
+ 
+    .div1{  
+        @include setbackground(yellow);
+    }
+    
+    .div2{
+        @extend .backgroundBlue;
+        @extend %gendiv;
+    }
+    .div3{  //attribute nesting
+        
+        background:{
+         image:url("../4.jpeg");
+         size:cover;
+         position: 50% 50%; 
+        }
+    }
+    .div4{// parent selecotor
+        &:hover{
+           @include setbackground(red);
+        }
+        &::after{
+           content: "hello";
+           width:10px;
+           height:10px;
+           border:1px solid black;
+           display:block;
+        }
+    }
+    .div5{ //color
+       @include setbackground($red);
+        &:hover {
+            animation:{
+            name:changeLight;
+            duration:4s;
+            iteration-count:infinite;
+            }
+        }  
+    }
+    
+    .div6{ //list
+        font-size:0;
+        div{
+            width: (200px/7);
+            height: 100%;
+            display:inline-block;
+            margin: 0;
+            border: 0;}
+        @each $item in $rainbow{
+            div:nth-of-type(#{index($rainbow,$item)})
+            {
+                 background-color:$item;
+            }
+        }
+    }
+    
+
+    .div7{ //while loop
+    font-size:0;
+           div{
+            width: (200px/7);
+            height: 100%;
+            display:inline-block;
+            margin: 0;
+            border: 0;}
+     $i:1;
+     @while $i<=length($rainbow){
+        div:nth-of-type(#{$i})
+            {
+                 background-color:nth($rainbow,$i);
+            }
+        $i:$i+1;}
+    }
+
+    .div8{ //media query
+      @include phone{
+      width:100%;
+      background-color:aqua;
+    }
+    
+    }
+}
+
+
+

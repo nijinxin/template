@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<style>
+    body{margin:0px;}
+.float
+{
+    width:50px;
+    height:50px;
+    background-color:aqua;   /*here is the fucking float first of all float will affect the elements after floating elements it will float over block elements and inline elements will float around floating elements*/
+    float:left;
+    margin:10px 10px;
+}
+
+.div1
+{
+    width:100px;
+    height:100px;
+    background-color: gold;
+
+}
+.div1 span{
+    position:relative;  /* ok content will appear above floating elements*/
+    top:-20px;
+}
+</style>
+<body>
+<div>
+<div class="float"></div>
+<div class="div1"></div>
+</div>
+</body>
+</html>

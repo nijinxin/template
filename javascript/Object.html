@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script>
+    window.onload=function(){
+        var p1=document.getElementsByTagName('p')[0];
+        p2=p1.nextElementSibling;
+        function car(make,model,color){
+        this.make=make;
+            this.model=model;
+            this.color=color;
+            
+        }
+        car.prototype.display=function(){
+        p1.innerHTML+=this.make+this.model+this.color+'<br/>';
+        }/*inheritance*/
+        
+        
+        var car1=new car('Mecedes','s600','black');
+        var car2=new car('BMW','x6','white');
+        var car3=new car('Prosche','Cayan','blue');
+        
+        car1.display=function(){
+         p2.innerHTML+='this is overide by car1';
+        }
+        car1.display();
+        car2.display();
+        car3.display();
+        
+        var s='hello';
+        for(var c in s)
+            console.log(c);
+    }
+    </script>
+
+</head>
+<body>
+<p></p>
+<p></p>
+</body>
+</html>

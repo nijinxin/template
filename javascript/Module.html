@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+
+</head>
+<body>
+<p></p>
+<p></p>
+<script>
+var lib=lib|| {}
+lib=(function(){
+
+    var para1=document.querySelector('p');
+    var color='aqua';
+    function Write(msg){
+    para1.innerHTML+=msg;
+    }
+   
+    function SetColor(color){
+     para1.style.color=color;
+    }
+    
+    function Clear(){
+    para1.innerHTML='';
+    }
+
+    return{
+    Write: Write,
+    SetColor:SetColor,
+    Clear:Clear
+    }
+
+}());   
+</script>
+<script>
+lib.SetColor('red');
+lib.Write('hello');
+    
+</script>
+</body>
+</html>

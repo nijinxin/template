@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script>
+    window.onload=function(){
+    var p=document.getElementById('one');
+    
+    var atrributes=p.attributes;
+    for(var i=0;i<atrributes.length;i++)
+    {
+        var node=document.createElement('span');
+        node.innerHTML='<br/>'+atrributes[i].name+':'+atrributes[i].value;
+        p.appendChild(node);
+    }
+    var p2=document.getElementById('two');
+    p2.outerHtml='<div>ss<div>';
+        
+    var frag=document.createDocumentFragment();
+    var strong=document.createElement('strong');
+    strong.style.fontStyle='italic';
+    strong.appendChild(document.createTextNode('fragment demo'));
+    frag.appendChild(document.createElement('p').appendChild(strong));
+    document.body.insertBefore(frag,document.body.firstChild);
+    }
+    
+    </script>
+</head>
+<body>
+<p id="one" name="myp" class="paragraph" style="color:aqua"></p>
+<p id="two"></p>
+</body>
+</html>

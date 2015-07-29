@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    
+<style>
+    #picture{
+       width: 180px;
+       height: 130px;
+    } 
+    #leftbox{
+       float:left;
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        border: 3px solid blue;
+    }
+    #rightbox{
+       float:left;
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        border: 3px solid blue;
+    }
+</style>
+<script>
+function doFirst(){
+   mypic=document.getElementById('picture');
+   mypic.addEventListener('dragstart',startDrag,false);
+   mypic.addEventListener('dragend',endDrag,false);
+   leftbox=document.getElementById('leftbox');
+   rightbox=document.getElementById('rightbox');
+   leftbox.addEventListener('dragenter',dragenter,false);
+   leftbox.addEventListener('dragleave',dragleave,false);
+   leftbox.addEventListener('dragover',function(e){ e.preventDefault();},false);
+   leftbox.addEventListener('drop',dropped,false);
+   rightbox.addEventListener('dragenter',dragenter,false);
+   rightbox.addEventListener('dragleave',dragleave,false);
+   rightbox.addEventListener('dragover',function(e){ e.preventDefault();},false);
+   rightbox.addEventListener('drop',dropped,false);
+
+}
+    
+function endDrag(e){
+   e.preventDefault();
+   e.target.parentElement.innerHTML='';
+   mypic=document.getElementById('picture');
+   mypic.addEventListener('dragstart',startDrag,false);
+   mypic.addEventListener('dragend',endDrag,false);
+}
+    
+function dragenter(e){
+   e.preventDefault();
+   e.target.style.background='skyblue';
+   e.target.style.border='3px solid red';
+}
+function dragleave(e){
+   e.preventDefault();
+   e.target.style.background='white';
+   e.target.style.border='3px solid blue';
+
+} 
+function startDrag(e)
+    {
+        var code='<img id="picture" src="4.jpeg"/>';
+        e.dataTransfer.setData('Text',code); /*this fucking dataTransfer object can only be acessed by drag and drop event*/
+    }
+function dropped(e)
+    {
+        e.preventDefault();
+        e.target.innerHTML=e.dataTransfer.getData('Text');
+        e.target.style.background='white';
+        e.target.style.border='3px solid blue';       
+    }
+window.onload=doFirst;
+    
+</script>
+</head>
+
+<body>
+    <section id="leftbox">
+    Drag in
+    </section>
+    <section id="rightbox">
+        <img id="picture" src="4.jpeg"/>
+    </section>
+</body>
+</html>

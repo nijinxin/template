@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FormValidation</title>  
+
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+
+
+<body>
+<div class="container">
+    
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">email</label>
+            <div class="col-sm-10">
+            <input type="text" id="email" class="form-control" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">password</label>
+            <div class="col-sm-10">
+            <input type="password" id="password" class="form-control" required>
+        </div>
+        </div>
+            <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">password</label>
+            <div class="col-sm-10">
+            <input type="password" id="password" class="form-control" required>
+        </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 col-sm-offset-2">
+           <button type="submit" class="btn btn-lg btn-primary">register</button>
+           </div>
+        </div>
+        
+
+    </form>
+</div>
+    
+</body>
+<script>
+window.onload=function(){
+    
+    
+    
+     
+     function formValidation(){
+         var email=document.getElementById('email').value;
+         var reg=/^[a-z0-9*_-]+@[a-z0-9]+\.[a-z]{2,4}$/;
+         var msg=''
+        
+       
+         alert(reg2.test(email));
+         if(!reg.test(email))
+         {
+             msg=msg+'check email format';
+         }
+             //alert(msg);
+     }
+    
+     document.forms[0].addEventListener('submit',formValidation,false);
+
+}
+</script>
+
+
+</html>

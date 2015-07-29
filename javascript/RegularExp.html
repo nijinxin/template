@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script>
+    window.onload=function(){
+         var text="java script is not java or script. javascript is a language in its own right";
+         var regex=/java\s*script/ig;
+         console.log(regex.test(text)); /*it will set lastindex as well*/
+         console.log(regex.exec(text)); /*when global return mathced string as res[0] and matched substring as res[1]-res[n]*/
+        
+         console.log(text.search(regex));
+         console.log(text.match(regex));/* when global return all the matched string when not global returned res[0] as first mathced and res[1]-res[n] as matched substring and lastindex and input*/
+    }
+    
+    
+    </script>
+</head>
+<body>
+<p></p>
+<p></p>
+</body>
+</html>

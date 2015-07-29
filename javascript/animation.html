@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+
+</head>
+<body>
+<div id="redball" style="width:50px;height:50px;border-radius:100%;background-color:aqua"></div>
+</body>
+    <script>
+    var lib=lib||{};
+    
+    var lib=(function animation(){
+        var redball=document.getElementById('redball');
+       
+        var body=document.getElementsByTagName('body')[0];
+        body.style.width=500+'px';
+        body.style.height=500+'px';
+        var xSpeed=5;
+        var ySpeed=5;
+        var xPos=redball.offsetLeft+50;
+        var yPos=redball.offsetTop;
+        redball.style.position='absolute';
+        function animate(){
+        
+            xPos+=xSpeed;
+            yPos+=ySpeed;
+            redball.style.left=xPos+'px';
+            redball.style.top=yPos+'px';
+            
+            if(xPos+xSpeed+redball.offsetWidth>body.offsetWidth || xPos+xSpeed<0) xSpeed=-xSpeed;
+            if(yPos+ySpeed+redball.offsetHeight>body.offsetHeight || yPos+ySpeed<0) ySpeed=-ySpeed;
+        
+        };
+        
+        return{
+        animate:animate
+        };
+    
+    }());
+    
+    setInterval(lib.animate,10);
+    </script>
+</html>

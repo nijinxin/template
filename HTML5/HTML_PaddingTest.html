@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+<style>
+    div{
+    width:100px;
+    height:100px;
+    border:1px solid black;
+    padding:px;}    
+</style>  
+<script>
+    window.onload=function(){
+       var arr=document.getElementsByTagName("div");
+       var style=window.getComputedStyle(arr[0],null);
+       alert(style.width);
+    }
+    
+</script>
+</head>
+
+<body>
+<div>sss</div>
+</body>
+</html>

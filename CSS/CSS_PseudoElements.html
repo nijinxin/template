@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<style>
+    p:first-child::before{content: "this is before pseudo elements"}
+    p:nth-of-type(2)::after{content:"this is after pesudo elements"}
+    p:nth-child(3)::first-letter{color:aqua}
+    p:last-child::first-line{color:red}
+    ::selection{color:yellow;
+        background-color:purple;}
+</style>
+<body>
+<div>
+<p>There are five Peseudo Elements that are used by :: which are so stupid</p>
+<p>The first one is after</p>
+<p>The second one is before those two are used with content to insert something before or after certain elements</p>
+<p>The third is first-line</p>
+<p>The fourth is the first-letter</p>
+<p>The last is the selection let;s make it complicated to use with pseudo classes</p>
+</div>
+</body>
+</html>

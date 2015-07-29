@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    
+<style>
+    .body
+    {
+        font-size:25px;
+    }
+    .fontbasic{
+         color:red;
+         font-size:25px;
+         font-family:Verdana;
+         font-weight: 700; /* Defines from thin to thick characters. 400 is the same as normal, and 700 is the same as bold*/
+         text-decoration: underline;
+         font-style:italic;
+         
+    }    
+    .font1
+    {
+        font-size:200%;
+    }
+    .font2
+    {
+        font-size:2em;
+    }
+    .font3
+    {   
+        font-size:2rem;
+    }
+</style>
+<script>
+window.onload=function(){
+var arrayp=document.getElementsByTagName('p');
+arrayp[0].innerHTML=arrayp[0].innerHTML+" "+window.getComputedStyle(arrayp[1],null).fontSize;
+arrayp[1].innerHTML=arrayp[1].innerHTML+" "+window.getComputedStyle(arrayp[1],null).fontSize; arrayp[2].innerHTML=arrayp[2].innerHTML+" "+window.getComputedStyle(arrayp[2],null).fontSize;
+
+}    
+    
+    
+</script>
+</head>
+
+
+<body>
+<h1>Font Test</h1>
+<div class="fontbasic">
+<p class="font1">This is font1 200%</p>
+<p class="font2">This is font2 2em</p>
+<p class="font3">This is font3 2rem</p>
+</body>
+</div>
+</html>

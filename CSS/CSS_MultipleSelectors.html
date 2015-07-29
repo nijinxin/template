@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+<style>
+h1,h2{
+color:pink;
+font-size:2em; //em is one font-size default is 16px
+font-family: fantasy;
+
+}   
+</style>
+<script>
+window.onload=function(){
+
+var h1=document.getElementsByTagName('h1');
+var style=window.getComputedStyle(h1[0],null);
+alert(style.fontSize);
+}    
+</script>
+
+</head>
+
+
+
+<body>
+<h1>The Basic Template</h1>
+<p>Welcome to the Fish Web Site</p>
+<h2></h2>
+<p>Bass fish live in lakes.</p>
+</body>
+</html>

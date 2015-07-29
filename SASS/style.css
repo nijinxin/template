@@ -1,0 +1,185 @@
+/* line 3, style.scss */
+.wraper div, .wraper .div2 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 10px auto;
+}
+
+/* line 25, style.scss */
+.backgroundBlue, .wraper .div2 {
+  background-color: blue;
+}
+
+@keyframes changehue {
+  0% {
+    background-color: black;
+  }
+  25% {
+    background-color: black;
+  }
+  50% {
+    background-color: black;
+  }
+  75% {
+    background-color: black;
+  }
+  100% {
+    background-color: black;
+  }
+}
+@keyframes changeSat {
+  0% {
+    background-color: black;
+  }
+  25% {
+    background-color: black;
+  }
+  50% {
+    background-color: black;
+  }
+  75% {
+    background-color: black;
+  }
+  100% {
+    background-color: black;
+  }
+}
+@keyframes changeLight {
+  0% {
+    background-color: black;
+  }
+  25% {
+    background-color: #602020;
+  }
+  50% {
+    background-color: #bf4040;
+  }
+  75% {
+    background-color: #df9f9f;
+  }
+  100% {
+    background-color: white;
+  }
+}
+/* line 57, style.scss */
+.wraper .div1 {
+  background-color: yellow;
+}
+/* line 65, style.scss */
+.wraper .div3 {
+  background-image: url("../4.jpeg");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+/* line 74, style.scss */
+.wraper .div4:hover {
+  background-color: red;
+}
+/* line 77, style.scss */
+.wraper .div4::after {
+  content: "hello";
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  display: block;
+}
+/* line 85, style.scss */
+.wraper .div5 {
+  background-color: black;
+}
+/* line 87, style.scss */
+.wraper .div5:hover {
+  animation-name: changeLight;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+/* line 96, style.scss */
+.wraper .div6 {
+  font-size: 0;
+}
+/* line 98, style.scss */
+.wraper .div6 div {
+  width: 28.57143px;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  border: 0;
+}
+/* line 105, style.scss */
+.wraper .div6 div:nth-of-type(1) {
+  background-color: red;
+}
+/* line 105, style.scss */
+.wraper .div6 div:nth-of-type(2) {
+  background-color: orange;
+}
+/* line 105, style.scss */
+.wraper .div6 div:nth-of-type(3) {
+  background-color: yellow;
+}
+/* line 105, style.scss */
+.wraper .div6 div:nth-of-type(4) {
+  background-color: green;
+}
+/* line 105, style.scss */
+.wraper .div6 div:nth-of-type(5) {
+  background-color: cyan;
+}
+/* line 105, style.scss */
+.wraper .div6 div:nth-of-type(6) {
+  background-color: blue;
+}
+/* line 105, style.scss */
+.wraper .div6 div:nth-of-type(7) {
+  background-color: purple;
+}
+/* line 113, style.scss */
+.wraper .div7 {
+  font-size: 0;
+}
+/* line 115, style.scss */
+.wraper .div7 div {
+  width: 28.57143px;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  border: 0;
+}
+/* line 123, style.scss */
+.wraper .div7 div:nth-of-type(1) {
+  background-color: red;
+}
+/* line 123, style.scss */
+.wraper .div7 div:nth-of-type(2) {
+  background-color: orange;
+}
+/* line 123, style.scss */
+.wraper .div7 div:nth-of-type(3) {
+  background-color: yellow;
+}
+/* line 123, style.scss */
+.wraper .div7 div:nth-of-type(4) {
+  background-color: green;
+}
+/* line 123, style.scss */
+.wraper .div7 div:nth-of-type(5) {
+  background-color: cyan;
+}
+/* line 123, style.scss */
+.wraper .div7 div:nth-of-type(6) {
+  background-color: blue;
+}
+/* line 123, style.scss */
+.wraper .div7 div:nth-of-type(7) {
+  background-color: purple;
+}
+@media only screen and (max-width: 480px) {
+  /* line 130, style.scss */
+  .wraper .div8 {
+    width: 100%;
+    background-color: aqua;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

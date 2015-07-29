@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script>
+    var lib=(function(){
+        
+  
+    function Recurse(a,action)
+    {
+            if(a.constructor==Array){
+            for(var i=0;i<a.length;i++){
+                Recurse(a[i],action);
+            }}
+        else {action(a)
+
+        }
+    }
+        
+        return {Recurse:Recurse};
+     
+    }());
+    
+    var arr=[
+    [1,2,3],1,[2,[3],1],
+    3,2
+    ];
+    var sum=0;
+    function Sum(a){
+      sum=sum+a;
+    }
+    lib.Recurse(arr,Sum);
+    alert(sum);
+    </script>
+</head>
+<body>
+<p></p>
+<p></p>
+</body>
+</html>

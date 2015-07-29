@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+#content_layer{ 
+width: 500px;
+height:300px;
+background-image: url(4.jpeg);
+background-size:cover;
+
+background-position:10px 10px;
+background-repeat: no-repeat;
+}
+    
+</style>
+
+</head>
+<body>
+
+<div id="content_layer"></div>
+
+</body>
+<script>
+(function parallax(){
+	var bgimg = document.getElementById('content_layer');
+    var xpos=0;
+    setInterval(function(){
+        xpos+=5;
+        bgimg.style.backgroundPositionX=xpos+'px';},60)
+    
+    
+   
+}())
+
+</script>
+</html>
